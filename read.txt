@@ -1,0 +1,35 @@
+app.js -->main start point for the backend code to start..
+          it sets up the entire blockchain enviornment for us
+
+config --->has configuration settings and links for bluemix
+
+config1 --->has a normal template type of struct
+
+functions-->has main business logic for node webservices
+            each function would return a valid output and the export it to blockchain_sdk.js
+
+routes.js --->it has post and get methods and the name of the endpoints where a developer has to hit..
+              and then once the service is called the post or get method would jump to functions/xyz.js (where it would execute the logic)
+              and pass the response back.    
+
+src --->has js files related to node sdk..every file here is modular and doesnt need much modifications as it just validates 
+the inputs received creates a log file and changes are only expected in blockchain_sdk.js
+
+blockchain_sdk.js --->this would expect an input from required functions..and the validate it and pass it to chaincode.
+
+
+
+UI           WEBSERVICES              node sdk        chaincode     ledger
+              (NODE.JS)               (wrapper)                     (database)
+
+
+|                |                        |               |            |
+|                |                        |               |            |
+|                |                        |               |            |
+|     <--->      |     <------->          |       <---->  |  <--->     |
+|                |                        |               |            |
+|                |                        |               |            |
+|                |                        |               |            |
+|                |                        |               |            |
+
+
